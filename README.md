@@ -1,43 +1,55 @@
-# Getting Started with Create React App
+# Tic-Tac-Toe (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Một phiên bản nhỏ của trò chơi Tic-Tac-Toe (Cờ ca-rô 3x3) được xây dựng bằng Create React App.
 
-## Available Scripts
+## Cách chạy và build
 
-In the project directory, you can run:
+Trong thư mục dự án, bạn có thể dùng các lệnh sau:
+
+### `npm install`
+
+Cài các package cần thiết.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Chạy ứng dụng ở chế độ phát triển. Mở http://localhost:3000 để xem.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tạo bản production trong thư mục `build/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy lên GitHub Pages (tự động bằng gh-pages)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Cài `gh-pages` nếu chưa cài:
 
-### `npm run eject`
+```powershell
+npm install --save-dev gh-pages
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Thêm `homepage` và script vào `package.json` (ví dụ):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```json
+"homepage": "https://<your-github-username>.github.io/<repo-name>",
+"scripts": {
+	"predeploy": "npm run build",
+	"deploy": "gh-pages -d build"
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Chạy:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```powershell
+npm run deploy
+```
+
+## Ghi chú
+
+- Nếu repo chưa tồn tại, tạo repo trên GitHub trước và thêm remote (`git remote add origin https://github.com/<username>/<repo>.git`).
+- Nếu GitHub Pages dùng branch khác (ví dụ `main` + thư mục `docs/`), bạn có thể build vào `docs/` và push.
+- Nếu gặp lỗi khi `npm start` (ví dụ exit code 1), mình có thể giúp chạy và debug log.
+
+---
 
 ## Learn More
 
