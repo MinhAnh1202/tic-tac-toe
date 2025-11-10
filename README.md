@@ -51,6 +51,14 @@ npm run deploy
 
 ---
 
+---
+
+## Live demo
+
+Trang đã được deploy qua GitHub Pages và có thể truy cập tại:
+
+https://minhanh1202.github.io/tic-tac-toe
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
